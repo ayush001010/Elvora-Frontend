@@ -30,62 +30,43 @@ const Register = () => {
   };
 
   return (
-    <div className=" bg-white max-w-md mx-auto  mt-20 ml-5 mr-5  p-6 border border-black rounded shadow-md">
-      <h1 className="text-2xl font-bold mb-6 text-center">Register</h1>
+   <div className="min-h-screen bg-[#fdfaf6] flex items-center justify-center px-4">
+  <div className="bg-white w-full max-w-md mt-10 p-6 border border-black rounded shadow-md">
+    <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
+    
+    <form>
+      <input
+        type="text"
+        placeholder="Name"
+        className="w-full border px-4 py-2 mb-4 rounded"
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        className="w-full border px-4 py-2 mb-4 rounded"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        className="w-full border px-4 py-2 mb-4 rounded"
+      />
+      <button
+        type="submit"
+        className="w-full bg-black text-white font-semibold py-2 rounded hover:bg-gray-800"
+      >
+        Register
+      </button>
+    </form>
 
-      {error && <p className="text-red-500 mb-4">{error}</p>}
+    <p className="mt-4 text-center text-sm">
+      Already have an account?{" "}
+      <span className="text-black font-medium cursor-pointer hover:underline">
+        Login
+      </span>
+    </p>
+  </div>
+</div>
 
-      <form onSubmit={handleRegister} className="space-y-4">
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full border px-4 py-2 rounded"
-          required
-        />
-
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full border px-4 py-2 rounded"
-          required
-        />
-
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          className="w-full border px-4 py-2 rounded"
-          required
-        />
-
-        <button
-          type="submit"
-          disabled={loading}
-          className={`w-full py-2 rounded text-white font-semibold ${
-            loading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-black hover:bg-gray-700"
-          }`}
-        >
-          {loading ? "Registering..." : "Register"}
-        </button>
-      </form>
-
-      <p className="mt-4 text-center text-base">
-        Already have an account?{" "}
-        <Link to="/login" className="text-gray-600 font-semibold hover:underline">
-          Login
-        </Link>
-      </p>
-    </div>
   );
 };
 

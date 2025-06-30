@@ -32,51 +32,53 @@ const Login = () => {
   };
 
   return (
-    <div className=" bg-white max-w-md mx-auto mt-20 ml-5 mr-5 p-6 border border-black rounded shadow-md">
-      <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
+    <div className="min-h-screen bg-[#fdfaf6] flex items-center justify-center px-4">
+      <div className="bg-white w-full max-w-md p-6 border border-black rounded shadow-md">
+        <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
 
-      {error && <p className="text-red-500 mb-4">{error}</p>}
+        {error && <p className="text-red-500 mb-4">{error}</p>}
 
-      <form onSubmit={handleLogin} className="space-y-4">
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full border px-4 py-2 rounded"
-          required
-        />
+        <form onSubmit={handleLogin} className="space-y-4">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full border px-4 py-2 rounded"
+            required
+          />
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          className="w-full border px-4 py-2 rounded"
-          required
-        />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full border px-4 py-2 rounded"
+            required
+          />
 
-        <button
-          type="submit"
-          disabled={loading}
-          className={`w-full py-2 rounded text-white font-semibold ${
-            loading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-black hover:bg-gray-700"
-          }`}
-        >
-          {loading ? "Logging in..." : "Login"}
-        </button>
-      </form>
+          <button
+            type="submit"
+            disabled={loading}
+            className={`w-full py-2 rounded text-white font-semibold ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-black hover:bg-gray-700"
+            }`}
+          >
+            {loading ? "Logging in..." : "Login"}
+          </button>
+        </form>
 
-      <p className="mt-4 text-center text-base">
-        Don’t have an account?{" "}
-        <Link to="/register" className="text-gray-600 font-semibold hover:underline">
-          Register
-        </Link>
-      </p>
+        <p className="mt-4 text-center text-base">
+          Don’t have an account?{" "}
+          <Link to="/register" className="text-gray-600 font-semibold hover:underline">
+            Register
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
