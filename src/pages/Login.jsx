@@ -32,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className=" bg-white max-w-md mx-auto mt-40 p-6 border border-black rounded shadow-md">
+    <div className=" bg-white max-w-md mx-auto mt-20 ml-5 mr-5 p-6 border border-black rounded shadow-md">
       <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
 
       {error && <p className="text-red-500 mb-4">{error}</p>}
