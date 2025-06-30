@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen bg-[#fdfaf6] flex justify-center px-4 py-12">
-      <div className="bg-white w-full max-w-md p-6 border border-black rounded shadow-md">
+      <div className="bg-white max-w-md p-6 border border-black rounded shadow-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
 
         {error && <p className="text-red-500 mb-4">{error}</p>}
