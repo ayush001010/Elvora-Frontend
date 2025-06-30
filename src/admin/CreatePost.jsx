@@ -56,7 +56,7 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfaf6] flex flex-col items-center justify-start px-4 py-10 space-y-10">
+    <div className="min-h-screen bg-[#fdfaf6] flex flex-col items-center justify-start px-4 py-10">
       <div className="w-full max-w-3xl bg-white border border-gray-200 shadow-md rounded-lg p-6">
         <div className="flex items-center space-x-2 mb-6">
           <Pencil className="text-yellow-500 w-6 h-6" />
@@ -78,20 +78,23 @@ const CreatePost = () => {
               required
             />
 
-            <ReactQuill
-              value={content}
-              onChange={setContent}
-              modules={modules}
-              formats={formats}
-              className="h-64 bg-white"
-            />
+            <div className="quill-container">
+              <ReactQuill
+                value={content}
+                onChange={setContent}
+                modules={modules}
+                formats={formats}
+              />
+            </div>
 
-            <button
-              type="submit"
-              className="bg-yellow-500 text-white font-bold px-6 py-3 rounded-md hover:bg-yellow-600 transition duration-300 w-full md:w-auto"
-            >
-              Publish Post
-            </button>
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                className="bg-yellow-500 text-white font-bold px-6 py-3 rounded-md hover:bg-yellow-600 transition duration-300"
+              >
+                Publish Post
+              </button>
+            </div>
           </form>
         )}
       </div>
