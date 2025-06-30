@@ -4,7 +4,11 @@ import axios from "../api/postApi.js";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -19,7 +23,9 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await axios.post("/api/auth/register", formData, { withCredentials: true });
+      await axios.post("/api/auth/register", formData, {
+        withCredentials: true,
+      });
       toast.success("Registered successfully!");
       navigate("/login");
     } catch (err) {
@@ -30,43 +36,42 @@ const Register = () => {
   };
 
   return (
-   <div className="min-h-screen bg-[#fdfaf6] flex items-center justify-center px-4">
-  <div className="bg-white w-full max-w-md mt-10 p-6 border border-black rounded shadow-md">
-    <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
-    
-    <form>
-      <input
-        type="text"
-        placeholder="Name"
-        className="w-full border px-4 py-2 mb-4 rounded"
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        className="w-full border px-4 py-2 mb-4 rounded"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        className="w-full border px-4 py-2 mb-4 rounded"
-      />
-      <button
-        type="submit"
-        className="w-full bg-black text-white font-semibold py-2 rounded hover:bg-gray-800"
-      >
-        Register
-      </button>
-    </form>
+    <div className="min-h-screen bg-[#fdfaf6] flex justify-center px-4 py-12">
+      <div className="bg-white w-full max-w-md p-6 border border-black rounded shadow-md">
+        <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
 
-    <p className="mt-4 text-center text-sm">
-      Already have an account?{" "}
-      <span className="text-black font-medium cursor-pointer hover:underline">
-        Login
-      </span>
-    </p>
-  </div>
-</div>
+        <form>
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full border px-4 py-2 mb-4 rounded"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full border px-4 py-2 mb-4 rounded"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full border px-4 py-2 mb-4 rounded"
+          />
+          <button
+            type="submit"
+            className="w-full bg-black text-white font-semibold py-2 rounded hover:bg-gray-800"
+          >
+            Register
+          </button>
+        </form>
 
+        <p className="mt-4 text-center text-sm">
+          Already have an account?{" "}
+          <span className="text-black font-medium cursor-pointer hover:underline">
+            Login
+          </span>
+        </p>
+      </div>
+    </div>
   );
 };
 

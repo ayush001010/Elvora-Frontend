@@ -19,7 +19,9 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("/api/auth/login", formData, { withCredentials: true });
+      const res = await axios.post("/api/auth/login", formData, {
+        withCredentials: true,
+      });
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       toast.success("Logged in successfully!");
@@ -32,7 +34,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfaf6] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#fdfaf6] flex justify-center px-4 py-12">
       <div className="bg-white w-full max-w-md p-6 border border-black rounded shadow-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
 
@@ -74,7 +76,10 @@ const Login = () => {
 
         <p className="mt-4 text-center text-base">
           Don’t have an account?{" "}
-          <Link to="/register" className="text-gray-600 font-semibold hover:underline">
+          <Link
+            to="/register"
+            className="text-gray-600 font-semibold hover:underline"
+          >
             Register
           </Link>
         </p>
