@@ -12,6 +12,18 @@ const CreatePost = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const { quill, quillRef } = useQuill({
+    theme: "snow",
+    modules: {
+      toolbar: [
+        [{ header: [1, 2, false] }],
+        ["bold", "italic", "underline"],
+        ["link", "image"],
+        [{ list: "ordered" }, { list: "bullet" }],
+      ],
+    },
+  });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
