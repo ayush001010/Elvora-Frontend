@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -15,7 +14,6 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError("");
     setLoading(true);
 
     try {
@@ -34,11 +32,9 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfaf6] flex justify-center px-4 py-12">
-      <div className="bg-white max-w-md p-6 border border-black rounded shadow-md">
+    <div className="flex items-center justify-center h-screen bg-[#fdfaf6] px-4">
+      <div className="w-full max-w-sm bg-white border border-black rounded-md shadow-md p-6">
         <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
-
-        {error && <p className="text-red-500 mb-4">{error}</p>}
 
         <form onSubmit={handleLogin} className="space-y-4">
           <input
@@ -74,11 +70,11 @@ const Login = () => {
           </button>
         </form>
 
-        <p className="mt-4 text-center text-base">
+        <p className="mt-4 text-center text-sm">
           Don’t have an account?{" "}
           <Link
             to="/register"
-            className="text-gray-600 font-semibold hover:underline"
+            className="text-black font-medium hover:underline"
           >
             Register
           </Link>

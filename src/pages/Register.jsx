@@ -9,7 +9,6 @@ const Register = () => {
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -19,7 +18,6 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setError("");
     setLoading(true);
 
     try {
@@ -36,7 +34,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#fdfaf6] px-4 py-12">
+    <div className="flex items-center justify-center h-screen bg-[#fdfaf6] px-4">
       <div className="w-full max-w-sm bg-white border border-black rounded-md shadow-md p-6">
         <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
 
@@ -70,8 +68,8 @@ const Register = () => {
           />
           <button
             type="submit"
-            className="w-full bg-black text-white font-semibold py-2 rounded hover:bg-gray-800"
             disabled={loading}
+            className="w-full bg-black text-white font-semibold py-2 rounded hover:bg-gray-800"
           >
             {loading ? "Registering..." : "Register"}
           </button>
