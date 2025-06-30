@@ -1,6 +1,6 @@
 # Elvora Blog Frontend
 
-This is the frontend for **Elvora**, a blog platform focused on rich human stories and ideas. It is built with **Next.js**, supports rich-text editing using **React-Quill**, and features SEO-friendly dynamic routes powered by slugs.
+This is the frontend for **Elvora**, a blog platform focused on rich human stories and ideas. It is built with **ReactJS**, supports rich-text editing using **React-Quill**, and features SEO-friendly dynamic routes powered by slugs.
 
 ---
 
