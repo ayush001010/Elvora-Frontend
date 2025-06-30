@@ -6,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between min-h-screen overflow-hidden bg-[#fdfaf6] px-4 sm:px-8 lg:px-16 py-8 md:py-12 font-outfit">
+    <div className="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between min-h-screen bg-[#fdfaf6] px-4 sm:px-8 lg:px-16 py-8 md:py-12 font-outfit">
 
       {/* Left Side Content */}
       <div className="w-full m-10 md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
