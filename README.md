@@ -58,5 +58,5 @@ VITE_API_URL=http://localhost:5000
 ---
 
 ## 😉 Elvora Backend
-🔗 [Live Site Elevora - the blogging webapp](https://elvora-web.netlify.app/)
+🔗 [Live Site Elevora - the blogging webapp](https://github.com/ayush001010/Elvora-Backend.git)
 
