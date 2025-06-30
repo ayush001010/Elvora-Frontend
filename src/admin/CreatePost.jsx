@@ -59,7 +59,7 @@ const CreatePost = () => {
     <div className="min-h-screen bg-[#fdfaf6] flex flex-col items-center justify-start px-4 py-10">
       <div className="w-full max-w-3xl bg-white border border-gray-200 shadow-md rounded-lg p-6">
         <div className="flex items-center space-x-2 mb-6">
-          <Pencil className="text-yellow-500 w-6 h-6" />
+          <Pencil className="text-yellow-600 w-6 h-6" />
           <h1 className="text-2xl font-bold text-gray-800">Create New Post</h1>
         </div>
 
