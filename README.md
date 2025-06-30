@@ -1,16 +1,62 @@
-<<<<<<< HEAD
-# Elvora-Frontend
-=======
-# React + Vite
+# Elvora Blog Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for **Elvora**, a blog platform focused on rich human stories and ideas. It is built with **Next.js**, supports rich-text editing using **React-Quill**, and features SEO-friendly dynamic routes powered by slugs.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✍️ Create and edit blog posts with a rich text editor (Quill)
+- 🔗 SEO-friendly slugs for blog URLs
+- 🧠 Meta tags for SEO enhancement
+- 🔓 Admin-only access for CRUD operations
+- 🌐 Fully responsive and modern UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> 9781304 (Initial frontend push)
+---
+
+## 🛠️ Technologies Used
+
+- [ReactJs](https://reactjs.org/)
+- [React-Quill](https://github.com/zenoamaro/react-quill)
+- [Tailwind CSS](https://tailwindcss.com/) or plain CSS (depending on your implementation)
+- [Axios](https://axios-http.com/) for API requests
+
+---
+
+
+## 📦 Installation
+
+```bash
+cd frontend
+npm install
+npm run dev
+
+```
+
+---
+
+## ⚙️ Environment Variables
+```bash
+VITE_API_URL=http://localhost:5000
+```
+
+---
+
+## 📸 UI Preview
+![UI Preview](./public/Screenshot%202025-06-30%20143344.png)
+
+---
+
+## 🧪 Admin Credentials
+  These are expected to be hardcoded or managed via auth middleware (basic example or JWT). Ensure that admin access is restricted in production.
+
+---
+
+## 🌍 Deployment
+🔗 [Live Site Elevora - the blogging webapp](https://elvora-web.netlify.app/)
+
+---
+
+## 😉 Elvora Backend
+🔗 [Live Site Elevora - the blogging webapp](https://elvora-web.netlify.app/)
+
