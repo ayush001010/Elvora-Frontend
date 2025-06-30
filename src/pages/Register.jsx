@@ -36,39 +36,52 @@ const Register = () => {
   };
 
   return (
-<div className="min-h-screen bg-[#fdfaf6] flex justify-center items-center px-4">
-  <div className="bg-white w-full max-w-md p-6 border border-black rounded-md shadow-md">
+    <div className="flex items-center justify-center min-h-screen bg-[#fdfaf6] px-4 py-12">
+      <div className="w-full max-w-sm bg-white border border-black rounded-md shadow-md p-6">
         <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
 
-        <form>
+        <form onSubmit={handleRegister}>
           <input
             type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             placeholder="Name"
             className="w-full border px-4 py-2 mb-4 rounded"
+            required
           />
           <input
             type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             placeholder="Email"
             className="w-full border px-4 py-2 mb-4 rounded"
+            required
           />
           <input
             type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
             placeholder="Password"
             className="w-full border px-4 py-2 mb-4 rounded"
+            required
           />
           <button
             type="submit"
             className="w-full bg-black text-white font-semibold py-2 rounded hover:bg-gray-800"
+            disabled={loading}
           >
-            Register
+            {loading ? "Registering..." : "Register"}
           </button>
         </form>
 
         <p className="mt-4 text-center text-sm">
           Already have an account?{" "}
-          <span className="text-black font-medium cursor-pointer hover:underline">
+          <Link to="/login" className="text-black font-medium hover:underline">
             Login
-          </span>
+          </Link>
         </p>
       </div>
     </div>
