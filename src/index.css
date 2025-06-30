@@ -13,7 +13,7 @@ html, body, #root {
 body{
     font-family: "Playfair Display" ;
     background-color: #fdfaf6;
-    /* background-image: url('/corner.png'); */
+    background-image: url('/corner.png');
     background-position: top right;
     background-repeat: no-repeat;
     background-size: cover; 
