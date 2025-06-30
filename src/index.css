@@ -4,28 +4,13 @@
 @tailwind utilities;
 
 
-body {
-  background-color: #fdfaf6;
-  background-image: url('/corner.png');
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-/* Optional fixed background effect */
-@media (min-width: 1024px) {
-  body {
-    background-attachment: fixed;
-    background-size: 400px; /* Adjust for large screens */
+body{
+    font-family: "Playfair Display" ;
+    background-color: #fdfaf6;
+    /* background-image: url('/corner.png'); */
     background-position: top right;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    background-size: 200px; /* Smaller image on mobile */
-    background-position: top right;
-  }
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
 
 .quill-container .ql-container {
