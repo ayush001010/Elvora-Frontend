@@ -14,18 +14,7 @@ const EditPage = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  const { quill, quillRef } = useQuill({
-    theme: "snow",
-    modules: {
-      toolbar: [
-        [{ header: [1, 2, false] }],
-        ["bold", "italic", "underline"],
-        ["link", "image"],
-        [{ list: "ordered" }, { list: "bullet" }],
-      ],
-    },
-  });
-
+ 
   useEffect(() => {
     if (!quill) return;
 
