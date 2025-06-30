@@ -11,7 +11,7 @@ html, body, #root {
 }
 
 body{
-    font-family: "Playfair Display", sans-serif;
+    font-family: "Playfair Display", "Outfit", sans-serif;
     background-color: #fdfaf6;
     background-image: url('/corner.png');
     background-position: top right;
