@@ -1,28 +1,33 @@
+// src/admin/CreatePost.jsx
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useQuill } from "react-quilljs";
-import "quill/dist/quill.snow.css";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import axios from "../api/postApi.js";
 import Loader from "../components/Loader";
-import { Pencil } from "lucide-react"; 
+import { Pencil } from "lucide-react";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const { quill, quillRef } = useQuill({
-    theme: "snow",
-    modules: {
-      toolbar: [
-        [{ header: [1, 2, false] }],
-        ["bold", "italic", "underline"],
-        ["link", "image"],
-        [{ list: "ordered" }, { list: "bullet" }],
-      ],
-    },
-  });
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, false] }],
+      ["bold", "italic", "underline"],
+      ["link", "image"],
+      [{ list: "ordered" }, { list: "bullet" }],
+    ],
+  };
+
+  const formats = [
+    "header", "bold", "italic", "underline",
+    "link", "image", "list", "bullet",
+  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,9 +35,7 @@ const CreatePost = () => {
     setLoading(true);
 
     try {
-      const content = quill.root.innerHTML;
       const token = localStorage.getItem("token");
-
       await axios.post(
         "/api/posts/create",
         { title, content },
@@ -69,9 +72,13 @@ const CreatePost = () => {
               required
             />
 
-            <div className="border border-gray-300 rounded-md">
-              <div ref={quillRef} className="h-64" />
-            </div>
+            <ReactQuill
+              value={content}
+              onChange={setContent}
+              modules={modules}
+              formats={formats}
+              className="h-64 bg-white"
+            />
 
             <button
               type="submit"
